@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="mycss.css">
+    <header>"Home"<header>
+ </head>
+
+    <body>
+      <p id="i"></p>
+   <script>
+     document.getElementById('i').innerHTML = "Hello JVSCRIPT";
+     </script>
+
+    <p> Click the button </p>
+    <button onclick="myFunction()"> Math</button>
+    <button onclick="Addieren()"> Addieren</button>
+
+    <label for="zahl1" background-color="blue">Zahl1</label>
+    <input type="text" id="z1" value="">
+
+    <label for="zahl2" background-color="red">Zahl2</label>
+    <input type="text" id="z2" value="">
+    <p id="add"></p>
+
+    <script type="text/javascript">
+        function Addieren(z1,z2) {
+          document.getElementById('add').innerHTML = z1 + z2;
+        }
+
+    </script>
+
+
+
+
+    <p id="b"> </p>
+    <p id="ad"></p>
+    <div class="Data" style="red"></div>
+
+    <form name="Show">
+      <input type="text" name="MouseX" value="0" size="10">X<br>
+      <input type="text" name="MouseY" value="0" size="10">Y<br>
+        <script type="text/javascript">
+            //eingabe FELD und dann Addieren ;)
+      function myFunction() {
+      document.getElementById('b').innerHTML = Math.random()*100;
+    }
+        var I = document.all?true:false
+
+        if(!I)  document.captureEvents(Event.MOUSEMOVE)
+
+        document.onmousemove = getMouseXY;
+        var tempX = 0
+        var tempY = 0
+
+      function getMouseXY(e)  {
+        if(I){
+          tempX = event.clientX + document.body.scrollLeft
+          tempY = event.clientY + document.body.scrollTop
+        }
+        else {
+          tempX = e.pageX
+          tempY = e.pageY
+
+        }
+        document.Show.MouseX.value = tempX
+        document.Show.MouseY.value = tempY
+
+        return true
+
+      }
+
+              </script>
+
+
+</body>
+</html>
